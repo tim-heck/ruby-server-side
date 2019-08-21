@@ -1,16 +1,31 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
-    'Put this in your pipe & smoke it!'
-end
 get '/learn_sinatra' do 
     'hello learner'
 end
 
-puts 'WHAT IT DO BABY'
-rand(100)
-
-get '/eatad' do
+get '/getlurned' do
     'wow, ur lurning good'
+end
+
+class Stream
+  def each
+    100.times { |i| yield "#{i}\n" }
+  end
+end
+
+get('/0to99') { Stream.new }
+
+
+# You can easily define your own conditions:
+
+set(:probability) { |value| condition { rand <= value } }
+
+get '/', :probability => 0.1 do
+  "You won!"
+end
+
+get '/' do
+  "Tough titties"
 end
