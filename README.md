@@ -8,3 +8,5 @@
 - `gem install sinatra`
 
 - `gem install sinatra-contrib` - automatically reloads the code when changes are made
+
+- `gem install pg`
