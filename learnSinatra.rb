@@ -27,5 +27,5 @@ get '/', :probability => 0.1 do
 end
 
 get '/' do
-  "Tough titties"
+  "You lose!"
 end
